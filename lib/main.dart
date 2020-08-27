@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:thynui/theme.dart';
-import 'package:thynui/ui/home/home.dart';
+import 'package:thynui/modules/theme.dart';
+import 'package:thynui/screens/login/login_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      darkTheme: ThemeData(brightness: Brightness.dark),
+      title: 'Thyn',
       theme: defaultTheme,
-      themeMode: ThemeMode.dark,
-      home: HomeScreen(title: 'Flutter Demo Home Page'),
+      home: LoginScreen(),
     );
   }
 }
