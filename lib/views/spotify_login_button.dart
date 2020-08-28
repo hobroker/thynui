@@ -14,10 +14,10 @@ class SpotifyLoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ButtonTheme(
+    return Container(
       height: 64,
-      padding: EdgeInsets.all(0),
       child: RaisedButton(
+        padding: EdgeInsets.symmetric(vertical: 8),
         color: AppColors.spotifyAccent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(32.0),
@@ -26,7 +26,10 @@ class SpotifyLoginButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SpotifyIcon(size: 32),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 8),
+              child: SpotifyIcon(),
+            ),
             SizedBox(width: 8),
             Text(
               text.toUpperCase(),
