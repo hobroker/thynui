@@ -1,0 +1,35 @@
+version: 2.1
+
+commands:
+  prepare:
+    description: "Prepare project"
+    steps:
+      - checkout
+      - run:
+          name: Get dependencies
+          command: flutter pub get
+
+jobs:
+  test:
+    docker:
+      - image: cirrusci/flutter:dev
+    steps:
+      - prepare
+      - run:
+          name: Run tests
+          command: flutter test
+
+  analyze:
+    docker:
+      - image: cirrusci/flutter:dev
+    steps:
+      - prepare
+      - run:
+          name: Run analyze
+          command: flutter analyze
+
+workflows:
+  cicd:
+    jobs:
+      - test
+      - analyze
