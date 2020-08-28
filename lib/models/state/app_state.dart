@@ -10,7 +10,7 @@ class AppState {
 
   factory AppState.init() {
     return AppState(
-      count: 1,
+      count: 0,
     );
   }
 
