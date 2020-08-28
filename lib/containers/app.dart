@@ -37,7 +37,7 @@ class _AppState extends State<App> {
         theme: defaultTheme,
         home: LoginContainer(),
         debugShowCheckedModeBanner: false,
-        localizationsDelegates: [i18nDelegate],
+        localizationsDelegates: [I18nDelegate()],
         supportedLocales: [Locale('en', '')],
         builder: FlutterI18n.rootAppBuilder(),
       ),

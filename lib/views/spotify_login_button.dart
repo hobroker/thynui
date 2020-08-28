@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:thynui/modules/app_colors.dart';
+import 'package:thynui/constants/color_constants.dart';
 import 'package:thynui/views/icons/spotify_icon.dart';
 
 class SpotifyLoginButton extends StatelessWidget {
@@ -14,11 +14,11 @@ class SpotifyLoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 64,
       child: RaisedButton(
         padding: EdgeInsets.symmetric(vertical: 8),
-        color: AppColors.spotifyAccent,
+        color: ColorConstants.spotifyAccent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(32.0),
         ),
@@ -34,7 +34,7 @@ class SpotifyLoginButton extends StatelessWidget {
             Text(
               text.toUpperCase(),
               style: TextStyle(
-                color: AppColors.black,
+                color: ColorConstants.black,
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
               ),

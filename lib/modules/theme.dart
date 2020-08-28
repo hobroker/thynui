@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:thynui/modules/app_colors.dart';
+import 'package:thynui/constants/color_constants.dart';
 
 final defaultTheme = ThemeData(
-  primaryColor: AppColors.primary,
+  primaryColor: ColorConstants.primary,
   textTheme: TextTheme(
     headline1: TextStyle(
       fontSize: 96.0,
       fontWeight: FontWeight.w500,
-      color: AppColors.white,
+      color: ColorConstants.white,
     ),
     subtitle1: TextStyle(
       fontSize: 24.0,
       fontWeight: FontWeight.normal,
-      color: AppColors.white,
+      color: ColorConstants.white,
     ),
   ),
 );

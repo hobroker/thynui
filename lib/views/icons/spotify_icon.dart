@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:thynui/modules/asset_path.dart';
+import 'package:thynui/constants/asset_constants.dart';
 import 'package:thynui/views/icons/base_icon.dart';
 
 class SpotifyIcon extends StatelessWidget {
@@ -15,7 +15,7 @@ class SpotifyIcon extends StatelessWidget {
     return BaseIcon(
       size: size,
       child: Image(
-        image: AssetImage(AssetPath.icons.spotifyBlack),
+        image: AssetImage(AssetConstants.icons.spotifyBlack),
       ),
     );
   }

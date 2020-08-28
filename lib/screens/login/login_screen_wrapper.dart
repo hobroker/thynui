@@ -29,12 +29,10 @@ class LoginScreenWrapper extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(
+              Container(
                 height: height / 2,
-                child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: heading,
-                ),
+                alignment: Alignment.bottomLeft,
+                child: heading,
               ),
               subtitle,
               Spacer(),
