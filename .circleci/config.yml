@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  codecov: codecov/codecov@1.1.0
+
 commands:
   prepare:
     description: "Prepare project"
@@ -18,6 +21,7 @@ jobs:
       - run:
           name: Run tests
           command: flutter test
+      - codecov/upload
 
   analyze:
     docker:
