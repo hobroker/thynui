@@ -24,3 +24,4 @@ flutter:
   assets:
     - assets/i18n/en.json
     - assets/icons/spotify-black.png
+    - assets/icons/spotify-white.png

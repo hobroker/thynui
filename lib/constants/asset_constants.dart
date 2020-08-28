@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 @immutable
 class _IconsPath {
   final spotifyBlack = 'assets/icons/spotify-black.png';
+  final spotifyWhite = 'assets/icons/spotify-white.png';
 }
 
 @immutable
