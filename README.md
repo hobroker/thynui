@@ -17,3 +17,41 @@ class NewIcon extends SquareIcon {
   String get iconPath => IconsConstants.newIcon;
 }
 ```
+
+### Use `Connector` widget
+1. If you need both `state` and `dispatch`
+```dart
+Connector(
+  converter: (state, dispatch) => _ViewModel(
+    count: getCount(state),
+    onClick: () => dispatch(SomeAction()),
+  ),
+  builder: (context, vm) {
+    return RaisedButton(
+      child: Text('Count: ${vm.count}'),
+      onPressed: vm.onClick,
+    );
+  },
+)
+```
+2. If you only need `state`
+```dart
+Connector.state(
+  converter: getCount,
+  builder: (context, count) {
+    return Text('Count: ${count}');
+  },
+)
+```
+1. If you only need `dispatch`
+```dart
+Connector.dispatch(
+  converter: (dispatch) => () => dispatch(SomeAction()),
+  builder: (context, onClick) {
+    return RaisedButton(
+      child: Text('Something'),
+      onPressed: onClick,
+    );
+  },
+)
+```
