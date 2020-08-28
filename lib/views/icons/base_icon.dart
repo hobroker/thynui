@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class BaseIcon extends StatelessWidget {
@@ -12,12 +14,18 @@ class BaseIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      constraints: BoxConstraints(
-        maxHeight: size,
-        maxWidth: size,
-      ),
-      child: child,
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        var maxSize = min(constraints.maxHeight, constraints.maxWidth);
+
+        return Container(
+          constraints: BoxConstraints(
+            maxHeight: size ?? maxSize,
+            maxWidth: size ?? maxSize,
+          ),
+          child: child,
+        );
+      },
     );
   }
 }
