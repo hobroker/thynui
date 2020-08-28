@@ -8,29 +8,29 @@ class LoginScreenWrapper extends StatelessWidget {
 
   const LoginScreenWrapper({
     Key key,
-    this.heading,
-    this.subtitle,
-    this.button,
+    @required this.heading,
+    @required this.subtitle,
+    @required this.button,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return PageWrapper(
       child: LayoutBuilder(builder: (context, constraints) {
+        var height = constraints.maxHeight;
+
         return Container(
+          color: Theme.of(context).primaryColor,
           padding: EdgeInsets.only(
             left: 24,
             right: 24,
             bottom: 56,
           ),
-          color: Theme.of(context).primaryColor,
-          height: constraints.maxHeight,
-          width: constraints.maxWidth,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(
-                height: constraints.maxHeight / 2,
+                height: height / 2,
                 child: Align(
                   alignment: Alignment.bottomLeft,
                   child: heading,

@@ -9,8 +9,8 @@ class LoginScreen extends StatelessWidget {
 
   const LoginScreen({
     Key key,
-    this.count,
-    this.onLoginClick,
+    @required this.count,
+    @required this.onLoginClick,
   }) : super(key: key);
 
   @override
