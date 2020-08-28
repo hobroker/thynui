@@ -4,13 +4,13 @@ import 'package:thynui/views/page_wrapper.dart';
 class LoginScreenWrapper extends StatelessWidget {
   final Widget heading;
   final Widget subtitle;
-  final Widget button;
+  final Widget footer;
 
   const LoginScreenWrapper({
     Key key,
     @required this.heading,
     @required this.subtitle,
-    @required this.button,
+    @required this.footer,
   }) : super(key: key);
 
   @override
@@ -36,7 +36,7 @@ class LoginScreenWrapper extends StatelessWidget {
               ),
               subtitle,
               Spacer(),
-              button,
+              footer,
             ],
           ),
         );

@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:thynui/constants/color_constants.dart';
 import 'package:thynui/views/icons/spotify_icon.dart';
 
-class SpotifyLoginButton extends StatelessWidget {
+class LoginButton extends StatelessWidget {
   final String text;
+  final Color backgroundColor;
   final Function onClick;
 
-  const SpotifyLoginButton({
+  const LoginButton({
     Key key,
     @required this.text,
-    @required this.onClick,
+    this.onClick,
+    this.backgroundColor,
   }) : super(key: key);
 
   @override
@@ -18,7 +20,7 @@ class SpotifyLoginButton extends StatelessWidget {
       height: 56,
       child: RaisedButton(
         padding: EdgeInsets.symmetric(vertical: 8),
-        color: ColorConstants.spotifyAccent,
+        color: backgroundColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(32.0),
         ),

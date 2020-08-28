@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
+import 'package:thynui/constants/color_constants.dart';
 import 'package:thynui/screens/login/login_screen_wrapper.dart';
-import 'package:thynui/views/spotify_login_button.dart';
+import 'package:thynui/views/login_button.dart';
 
 class LoginScreen extends StatelessWidget {
   final int count;
@@ -28,8 +29,9 @@ class LoginScreen extends StatelessWidget {
         ),
         style: Theme.of(context).textTheme.subtitle1,
       ),
-      button: SpotifyLoginButton(
+      footer: LoginButton(
         text: FlutterI18n.translate(context, 'login.connect_with_spotify'),
+        backgroundColor: ColorConstants.spotifyAccent,
         onClick: onLoginClick,
       ),
     );
