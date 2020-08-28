@@ -15,7 +15,7 @@ class SpotifyLoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 64,
+      height: 56,
       child: RaisedButton(
         padding: EdgeInsets.symmetric(vertical: 8),
         color: ColorConstants.spotifyAccent,
@@ -27,15 +27,15 @@ class SpotifyLoginButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(vertical: 8),
+              padding: EdgeInsets.symmetric(vertical: 4),
               child: SpotifyIcon(),
             ),
             SizedBox(width: 8),
             Text(
-              text.toUpperCase(),
+              text,
               style: TextStyle(
-                color: ColorConstants.black,
-                fontSize: 20,
+                color: ColorConstants.white,
+                fontSize: 18,
                 fontWeight: FontWeight.w500,
               ),
             )

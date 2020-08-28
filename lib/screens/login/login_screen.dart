@@ -29,7 +29,7 @@ class LoginScreen extends StatelessWidget {
         style: Theme.of(context).textTheme.subtitle1,
       ),
       button: SpotifyLoginButton(
-        text: FlutterI18n.translate(context, 'login.button_text'),
+        text: FlutterI18n.translate(context, 'login.connect_with_spotify'),
         onClick: onLoginClick,
       ),
     );
