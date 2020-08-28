@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
+import 'package:thynui/modules/i18n_delegate.dart';
 import 'package:thynui/modules/theme.dart';
 import 'package:thynui/screens/login/login_screen.dart';
 
 class App extends StatelessWidget {
-  final FlutterI18nDelegate localizationsDelegate;
-
-  const App({Key key, this.localizationsDelegate}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +12,7 @@ class App extends StatelessWidget {
       theme: defaultTheme,
       home: LoginScreen(),
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: [localizationsDelegate],
+      localizationsDelegates: [i18nDelegate],
       supportedLocales: [Locale('en', '')],
       builder: FlutterI18n.rootAppBuilder(),
     );
