@@ -4,17 +4,27 @@ import 'package:redux/redux.dart';
 import 'package:thynui/models/state/app_state.dart';
 
 class Connector<ViewModel> extends StatelessWidget {
-  final Function(Store<AppState> store) converter;
-  final Function(BuildContext context, ViewModel vm) builder;
+  final Function(AppState, Function(dynamic)) converter;
+  final Function(BuildContext, ViewModel) builder;
 
   Connector({this.converter, this.builder});
 
   factory Connector.state({
-    Function(AppState state) converter,
-    Function(BuildContext context, ViewModel vm) builder,
+    Function(AppState) converter,
+    Function(BuildContext, ViewModel) builder,
   }) {
     return Connector(
-      converter: (store) => converter(store.state),
+      converter: (state, dispatch) => converter(state),
+      builder: builder,
+    );
+  }
+
+  factory Connector.dispatch({
+    Function(Function(dynamic)) converter,
+    Function(BuildContext, ViewModel) builder,
+  }) {
+    return Connector(
+      converter: (state, dispatch) => converter(dispatch),
       builder: builder,
     );
   }
@@ -26,7 +36,7 @@ class Connector<ViewModel> extends StatelessWidget {
     return StoreConnector<AppState, ViewModel>(
       distinct: true,
       onWillChange: _onWillChange,
-      converter: converter,
+      converter: (Store store) => converter(store.state, store.dispatch),
       builder: builder,
     );
   }

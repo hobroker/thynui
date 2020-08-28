@@ -3,10 +3,10 @@ import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:thynui/actions/app_actions.dart';
+import 'package:thynui/containers/login_container.dart';
 import 'package:thynui/models/state/app_state.dart';
 import 'package:thynui/modules/i18n_delegate.dart';
 import 'package:thynui/modules/theme.dart';
-import 'package:thynui/screens/login/login_screen.dart';
 
 class App extends StatefulWidget {
   final Store<AppState> store;
@@ -35,9 +35,9 @@ class _AppState extends State<App> {
       child: MaterialApp(
         title: 'Thyn',
         theme: defaultTheme,
-        home: LoginScreen(),
+        home: LoginContainer(),
         debugShowCheckedModeBanner: false,
-        localizationsDelegates: [i18nDelegate],
+        localizationsDelegates: [I18nDelegate()],
         supportedLocales: [Locale('en', '')],
         builder: FlutterI18n.rootAppBuilder(),
       ),

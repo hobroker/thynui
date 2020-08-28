@@ -1,7 +1,7 @@
 {
   "login": {
     "heading": "Thyn",
-    "subtitle": "Another other text right here",
-    "button_text": "Login"
+    "subtitle": "Another other text right here {count}",
+    "connect_with_spotify": "Connect with Spotify"
   }
 }

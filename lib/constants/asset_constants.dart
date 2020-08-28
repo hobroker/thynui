@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
 @immutable
-class AssetPath {
+class AssetConstants {
   static final i18nDir = 'assets/i18n';
 }

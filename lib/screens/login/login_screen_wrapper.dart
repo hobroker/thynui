@@ -4,41 +4,39 @@ import 'package:thynui/views/page_wrapper.dart';
 class LoginScreenWrapper extends StatelessWidget {
   final Widget heading;
   final Widget subtitle;
-  final Widget button;
+  final Widget footer;
 
   const LoginScreenWrapper({
     Key key,
-    this.heading,
-    this.subtitle,
-    this.button,
+    @required this.heading,
+    @required this.subtitle,
+    @required this.footer,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return PageWrapper(
       child: LayoutBuilder(builder: (context, constraints) {
+        var height = constraints.maxHeight;
+
         return Container(
+          color: Theme.of(context).primaryColor,
           padding: EdgeInsets.only(
             left: 24,
             right: 24,
-            bottom: 56,
+            bottom: 48,
           ),
-          color: Theme.of(context).primaryColor,
-          height: constraints.maxHeight,
-          width: constraints.maxWidth,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(
-                height: constraints.maxHeight / 2,
-                child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: heading,
-                ),
+              Container(
+                height: height / 2,
+                alignment: Alignment.bottomLeft,
+                child: heading,
               ),
               subtitle,
               Spacer(),
-              button,
+              footer,
             ],
           ),
         );
