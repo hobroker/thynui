@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:redux/redux.dart';
 import 'package:thynui/actions/app_actions.dart';
 import 'package:thynui/screens/login/login_screen.dart';
 import 'package:thynui/selectors/count.dart';
@@ -9,9 +8,9 @@ class LoginContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Connector(
-      converter: (Store store) => _ViewModel(
-        count: getCount(store.state),
-        onLoginClick: () => store.dispatch(AppStartedAction()),
+      converter: (state, dispatch) => _ViewModel(
+        count: getCount(state),
+        onLoginClick: () => dispatch(AppStartedAction()),
       ),
       builder: (context, vm) {
         return LoginScreen(
