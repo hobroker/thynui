@@ -1,16 +1,15 @@
 # thynui
-
 Client for https://github.com/hobroker/thyn
 
 ## How to
 ### Add an icon
 1. Copy the file to `assets/icons`
 2. Add the asset path to `pubspec.yaml`
-3. Add a new static property to `constants/icon_constants.dart` with the icon name and path
+3. Add a new static property to `IconsConstants` with the icon name and path
 ```dart
 static final newIcon = 'assets/icons/new-icon.png';
 ```
-4. To use the icon, extend `SquareIcon` to create a widget in `views/icons`
+4. To use the icon, extend `SquareIcon`
 ```dart
 class NewIcon extends SquareIcon {
   @override
@@ -43,7 +42,7 @@ Connector.state(
   },
 )
 ```
-1. If you only need `dispatch`
+3. If you only need `dispatch`
 ```dart
 Connector.dispatch(
   converter: (dispatch) => () => dispatch(SomeAction()),
