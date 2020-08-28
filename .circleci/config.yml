@@ -1,0 +1,39 @@
+version: 2.1
+
+orbs:
+  codecov: codecov/codecov@1.1.0
+
+commands:
+  prepare:
+    description: "Prepare project"
+    steps:
+      - checkout
+      - run:
+          name: Get dependencies
+          command: flutter pub get
+
+jobs:
+  test:
+    docker:
+      - image: cirrusci/flutter:dev
+    steps:
+      - prepare
+      - run:
+          name: Run tests
+          command: flutter test --coverage
+      - codecov/upload
+
+  analyze:
+    docker:
+      - image: cirrusci/flutter:dev
+    steps:
+      - prepare
+      - run:
+          name: Run analyze
+          command: flutter analyze
+
+workflows:
+  cicd:
+    jobs:
+      - test
+      - analyze
